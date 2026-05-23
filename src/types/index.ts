@@ -16,13 +16,15 @@ interface RehearsalBlock {
   duration: number; // Hours required
 }
 
-type CharacterBreakdownKeyObject = [key: string]: number;
-
 interface Scene {
   length: number; //pages
-  characters: Array<string>;
+  characters: Array<string>; // corresponds to all valid Person.role (TODO: strongly type? How enforced?)
 }
 interface Script {
   length: number; // pages (top-level? or maybe derived from Scenes?)
   scenes: Array<Scene>;
+}
+
+interface Cast {
+  castMembers: Array<Person>;
 }
