@@ -1,4 +1,4 @@
-import { Cast, Script } from '../types';
+import { Cast, Person, Scene, Script } from '../types';
 
 export const createSchedule = (script: Script, cast: Cast): void => {
   const scenes = script.scenes;
@@ -10,3 +10,8 @@ export const createSchedule = (script: Script, cast: Cast): void => {
     // - Create rehearsal blocks? 
   }
 }
+
+const isActorInScene = (scene: Scene, actor: Person): boolean => {
+  return scene.characters.contains(actor.role);
+}
+
