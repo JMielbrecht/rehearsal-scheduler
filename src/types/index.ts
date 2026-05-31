@@ -1,30 +1,30 @@
 
 export interface Person {
-  name: string;
-  role: string;
-  conflicts: Date[];
+    name: string;
+    role: string;
+    conflicts: Date[];
 }
 
 export enum RehearsalType {
-  Blocking,
-  Choreography,
-  Music
+    Blocking,
+    Choreography,
+    Music
 }
 
 export interface RehearsalBlock {
-  type: RehearsalType;
-  duration: number; // Hours required
+    type: RehearsalType;
+    duration: number; // Hours required
 }
 
 export interface Scene {
-  length: number; //pages
-  characters: Array<string>; // corresponds to all valid Person.role (TODO: strongly type? How enforced?)
+    length: number; //pages
+    characters: Array<string>; // corresponds to all valid Person.role (TODO: strongly type? How enforced?)
 }
 export interface Script {
-  length: number; // pages (top-level? or maybe derived from Scenes?)
-  scenes: Array<Scene>;
+    length: number; // pages (top-level? or maybe derived from Scenes?)
+    scenes: Array<Scene>;
 }
 
 export interface Cast {
-  castMembers: Array<Person>;
+    castMembers: Array<Person>;
 }
