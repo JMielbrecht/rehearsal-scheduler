@@ -25,3 +25,15 @@ export const isActorInScene = (scene: Scene, actor: Person): boolean => {
 export const getRehearsalDate = (date: Date): RehearsalDate => {
     return date.toLocaleDateString() // wondering if I should worry about a bug if users from different time zones use the same app...
 }
+
+export const parseSceneList = (script: Script): Array<Scene> => {
+    const scenes: Array<Scene> = [];
+    for (const scriptScene of script.scenes) {
+        const characters = new Set(scriptScene.characters);
+        scenes.push({
+            length: scriptScene.length,
+            characters: characters
+        })
+    }
+    return scenes;
+}
