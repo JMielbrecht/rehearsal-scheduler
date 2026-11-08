@@ -20,7 +20,7 @@ export function RehearsalFormDates() {
 
     return (
         <Field className="mx-auto w-60">
-            <FieldLabel htmlFor="date-picker-range">Date Picker Range</FieldLabel>
+            <FieldLabel htmlFor="date-picker-range">Pick Rehearsal Dates</FieldLabel>
             <Popover>
                 <PopoverTrigger render={<Button variant="outline" id="date-picker-range" className="justify-start px-2.5 font-normal"><CalendarIcon data-icon="inline-start" />{date?.from ? (
                     date.to ? (
