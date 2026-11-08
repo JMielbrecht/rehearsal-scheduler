@@ -1,4 +1,13 @@
 {
+    // "files": [],
+    // "references": [
+    //     {
+    //         "path": "./tsconfig.app.json"
+    //     },
+    //     {
+    //         "path": "./tsconfig.node.json"
+    //     }
+    // ],
     "compilerOptions": {
         "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
         "target": "es2023",
@@ -13,13 +22,16 @@
         "allowArbitraryExtensions": true,
         "skipLibCheck": true,
         /* aliases */
+        "ignoreDeprecations": "6.0",
+        "baseUrl": ".",
         "paths": {
             "@/*": [
-                "./@/*"
+                "./src/*"
             ]
         },
         /* Bundler mode */
         "moduleResolution": "bundler",
+        "resolvePackageJsonImports": true,
         "allowImportingTsExtensions": true,
         "verbatimModuleSyntax": true,
         "moduleDetection": "force",
@@ -32,6 +44,7 @@
         "noFallthroughCasesInSwitch": false
     },
     "include": [
+        "@",
         "src"
     ]
 }

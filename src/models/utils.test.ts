@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest';
 import { importScript, createSchedule, isActorInScene, getRehearsalDate } from "./utils";
-import { Person, Scene } from './types';
+import type { Person, Scene } from './types';
 
 /*
 This is a guess as to the kind of data form I want the schedule to be once parsed from the script (or entered manually, worst case scenario)
