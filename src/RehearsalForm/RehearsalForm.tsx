@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import RehearsalFormDates from './RehearsalFormDates';
+import { RehearsalFormDates } from './RehearsalFormDates';
 import RehearsalFormHours from './RehearsalFormHours';
 
 const RehearsalForm = () => {
