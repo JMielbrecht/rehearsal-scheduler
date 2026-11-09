@@ -1,71 +1,49 @@
 'use client'
 
 import { useState } from 'react'
-import { Button } from '@/components/ui/button'
-import { Calendar } from '@/components/ui/calendar'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
-import { ChevronDownIcon } from 'lucide-react'
 
 const RehearsalFormHours = () => {
-  const [open, setOpen] = useState(false)
-  const [date, setDate] = useState<Date | undefined>(undefined)
+    const [startTime, setStartTime] = useState<string>('18:00:00');
+    const [endTime, setEndTime] = useState<string>('21:00:00');
 
-  return (
+    return (
     <div className='flex flex-col gap-6'>
-      {/* <div className='flex w-full max-w-xs flex-col gap-2'>
-        <Label htmlFor='date' className='px-1'>
-          Date
-        </Label>
-        <Popover open={open} onOpenChange={setOpen}>
-          <PopoverTrigger
-            render={<Button variant='outline' id='date' />}
-            className='w-full justify-between font-normal'
-          >
-            {date ? date.toLocaleDateString() : 'Pick a date'}
-            <ChevronDownIcon />
-          </PopoverTrigger>
-          <PopoverContent className='w-auto overflow-hidden p-0' align='start'>
-            <Calendar
-              mode='single'
-              selected={date}
-              onSelect={date => {
-                setDate(date)
-                setOpen(false)
-              }}
-            />
-          </PopoverContent>
-        </Popover>
-      </div> */}
-      <div className='flex gap-4'>
+        <div className='flex gap-4'>
         <div className='flex flex-col gap-2'>
-          <Label htmlFor='time-from' className='px-1'>
+            <Label htmlFor='time-from' className='px-1'>
             From
-          </Label>
-          <Input
+            </Label>
+            <Input
             type='time'
             id='time-from'
             step='1'
-            defaultValue='01:30:00'
+            defaultValue={startTime}
+            onChange={(evt) => {
+                setStartTime(evt.target.value);
+            }}
             className='bg-background appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none'
-          />
+            />
         </div>
         <div className='flex flex-col gap-2'>
-          <Label htmlFor='time-to' className='px-1'>
+            <Label htmlFor='time-to' className='px-1'>
             To
-          </Label>
-          <Input
+            </Label>
+            <Input
             type='time'
             id='time-to'
             step='1'
-            defaultValue='02:30:00'
+            defaultValue={endTime}
+            onChange={(evt) => {
+                setEndTime(evt.target.value);
+            }}
             className='bg-background appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none'
-          />
+            />
         </div>
-      </div>
+        </div>
     </div>
-  )
+    )
 }
 
 export default RehearsalFormHours
