@@ -12,9 +12,7 @@ const RehearsalForm = () => {
 
     return (
         <div className="flex flex-col items-center">
-        <div className="border-1 border-purple-500">
-            REHEARSAL CALENDAR FORM HERE
-        </div>
+        <h1>REHEARSAL CALENDAR FORM HERE</h1>
         {/* Start/End Dates */}
         <h2>When do you want to rehearse?</h2>
         <RehearsalFormDates />
