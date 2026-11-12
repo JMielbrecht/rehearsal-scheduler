@@ -1,6 +1,7 @@
 import React from 'react';
 import { RehearsalFormDates } from './RehearsalFormDates';
 import RehearsalFormHours from './RehearsalFormHours';
+import { RehearsalFormDays } from './RehearsalFormDays';
 
 const RehearsalForm = () => {
 
@@ -13,7 +14,8 @@ const RehearsalForm = () => {
         {/* Rehearsal Times */}
         <h2><strong>What hours do you want to rehearse?</strong></h2>
         <RehearsalFormHours />
-        {/* TODO */}
+        {/* Rehearsal Days of the week */}
+        <RehearsalFormDays />
         </div>
     )
 }
