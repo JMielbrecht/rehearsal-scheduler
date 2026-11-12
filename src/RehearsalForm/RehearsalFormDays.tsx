@@ -40,7 +40,7 @@ export const RehearsalFormDays = () => {
             <div className="grid grid-cols-7 gap-4">
             {DAYS_OF_WEEK.map(day => {
                 return (
-                    <div className={`${isSelected(day) ? 'bg-white-50 text-white' : 'bg-accent-foreground text-black'} flex size-10 border-2 border-white justify-center hover:bg-white-50`}
+                    <div className={`${isSelected(day) ? 'bg-accent-foreground text-black' : 'bg-white-50 text-white'} flex size-10 border-2 border-white justify-center hover:bg-white-50`}
                         key={day} 
                         onClick={() => handleDayClick(day)}
                         >
