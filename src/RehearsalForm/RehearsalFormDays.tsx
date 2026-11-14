@@ -30,17 +30,13 @@ export const RehearsalFormDays = () => {
         }
     }
 
-    useEffect(() => {
-        console.log('COME ON', selectedDays)
-    }, [selectedDays])
-
     return (
         <div>
             <strong>What days do you want to rehearse?</strong>
             <div className="grid grid-cols-7 gap-4">
             {DAYS_OF_WEEK.map(day => {
                 return (
-                    <div className={`${isSelected(day) ? 'bg-accent-foreground text-black' : 'bg-white-50 text-white'} flex size-10 border-2 border-white justify-center hover:bg-white-50`}
+                    <div className={`${isSelected(day) ? 'bg-accent-foreground text-black' : 'bg-white-50 text-white'} flex items-center justify-center size-10 border-2 border-white rounded-lg`}
                         key={day} 
                         onClick={() => handleDayClick(day)}
                         >
